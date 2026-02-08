@@ -7,7 +7,7 @@ import { ClerkProvider, useAuth, UserButton } from '@clerk/nextjs'
  import { dark } from '@clerk/themes'
 import { ThemeProvider } from './theme-provider'
 import { UnauthenticatedView } from '@/features/auth/components/unauthenticated-view'
-import { AuthLaodingView } from '@/features/auth/components/auth-loading-view'
+import {  AuthLoadingView } from '@/features/auth/components/auth-loading-view'
 
 
 if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
@@ -15,7 +15,7 @@ if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
 }
 
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL)
-
+    
 export const Providers = ({ children }: { children: ReactNode }) => {
 
   return (
@@ -40,7 +40,7 @@ export const Providers = ({ children }: { children: ReactNode }) => {
            <UnauthenticatedView/>
         </Unauthenticated>
         <AuthLoading>
-            <AuthLaodingView/>
+            <AuthLoadingView/>
         </AuthLoading>
         </ThemeProvider>
     </ConvexProviderWithClerk>
