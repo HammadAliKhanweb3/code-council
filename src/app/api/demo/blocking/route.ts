@@ -14,6 +14,11 @@ export async function POST() {
     const response = await generateText({
       model: openrouter.chat('arcee-ai/trinity-large-preview:free'),
       prompt: 'What is OpenRouter?',
+        experimental_telemetry: {
+    isEnabled: true,
+    recordInputs: true,
+    recordOutputs: true,
+  },
     });
 
     console.log("Generated text preview:", response.text);
