@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Code Council
+An Ai feartured IDE a cusor alternative right inside your web.
+
+
 
 ## Getting Started
 
