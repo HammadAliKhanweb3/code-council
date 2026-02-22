@@ -5,8 +5,10 @@ import { useState } from "react"
 import { Id } from "../../../../../convex/_generated/dataModel"
 import { useProjectById } from "../../hooks/use-projects"
 import { Button } from "@/components/ui/button"
-import { useCreateFile, useCreateFolder } from "../../hooks/use-files"
+import { useCreateFile, useCreateFolder, useFolderContent } from "../../hooks/use-files"
 import { CreateInput } from "./create-input"
+import { LoadingRow } from "./loading-row"
+import { Tree } from "./tree"
 
 
 export const FileExplorer = (
@@ -21,6 +23,13 @@ export const FileExplorer = (
     const createFile = useCreateFile() 
     const createFolder = useCreateFolder()
 
+    const project = useProjectById(projectId)
+
+    const rootFiles = useFolderContent({
+        projectId,
+        enabled:isOpen
+    })
+    
     const handleCreate = (name:string)=>{
         setCreating(null)
 
@@ -42,7 +51,6 @@ export const FileExplorer = (
     
     
     
-const project = useProjectById(projectId)
 return(
     <div className="h-full bg-sidebar">
       <ScrollArea>
@@ -109,6 +117,7 @@ return(
             isOpen &&
             (
                 <>
+                {rootFiles === undefined && <LoadingRow level={0}/>}
                 {
                     creating && (
                         <CreateInput
@@ -119,9 +128,19 @@ return(
                         />
                     )
                 }
+                {rootFiles?.map((item)=>(
+                   <Tree
+                   key={`${item._id}-${collapseKey}`}
+                   item={item}
+                   level={0}
+                   projectId={projectId}
+                   />
+                ))}
                 </>
             )
          }
+
+
       </ScrollArea>
     </div>
 )
