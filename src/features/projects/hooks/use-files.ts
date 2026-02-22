@@ -1,5 +1,6 @@
-import { useMutation } from "convex/react"
+import { useMutation, useQuery } from "convex/react"
 import { api } from "../../../../convex/_generated/api"
+import { Id } from "../../../../convex/_generated/dataModel"
 
 
 
@@ -9,4 +10,23 @@ export const useCreateFile = ()=>{
 
 export const useCreateFolder = ()=>{
     return useMutation(api.files.createFolder)
+}
+
+export const useRenameFile = ()=>{
+    return useMutation(api.files.renameFile)
+}
+export const useDeleteFile = ()=>{
+    return useMutation(api.files.deleteFile)
+}
+
+export const useFolderContent = ({projectId,parentId,enabled=true}:{
+    projectId:Id<"projects">,
+    parentId?:Id<"files">,
+    enabled?:boolean
+}
+)=>{
+    return useQuery(
+        api.files.getFolderContent,
+        enabled ? {projectId,parentId}: "skip"
+    )
 }
