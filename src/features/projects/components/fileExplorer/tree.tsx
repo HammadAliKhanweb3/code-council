@@ -157,11 +157,13 @@ export const Tree = ({
     )
     }
  
-if(creating){
+if(isRenaming){
+    console.log("inside renaming");
+    
      return(
-        <>
+        <>        
         <RenameInput
-           type={creating}
+           type="folder"
            defaultValue={folderName}
            level={level}
            isOpen={isOpen}
@@ -192,7 +194,7 @@ if(creating){
          level={level}
          onClick={()=>setIsOpen((value)=>!value)}
          onDoubleClick={()=>{}}
-         onRename={()=>{}}
+         onRename={()=>setIsRenaming(true)}
          item={item}
          onDelete={()=>{
             deleteFile({id:item._id})
