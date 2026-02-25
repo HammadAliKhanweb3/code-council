@@ -233,7 +233,7 @@ export const renameFile = mutation({
                 sibling._id !== args.id
         )
 
-    if(!existingFile){
+    if(existingFile){
         throw new Error(`A ${file.type} with this name already exists.`)
     }
 

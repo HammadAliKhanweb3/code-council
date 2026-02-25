@@ -53,12 +53,11 @@ export const RenameInput = (
             <input 
             autoFocus
             type="text"
-            defaultValue={defaultValue}
             value={value}
             onChange={(e)=>setValue(e.target.value)}
             className="flex-1 bg-transparent text-sm outline-none
             focus:ring-1 focus:ring-inset focus:ring-ring"
-            onBlur={handleSubmit}
+            
             onKeyDown={(e)=>{
                 if(e.key === "Enter"){
                     handleSubmit()
