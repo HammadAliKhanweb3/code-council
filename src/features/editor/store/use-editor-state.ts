@@ -24,7 +24,7 @@ interface EditorStore{
 }
 
 
-export const useEditorState = create<EditorStore>()((set,get)=>({
+export const useEditorStore = create<EditorStore>()((set,get)=>({
 tabs: new Map(),
 
 getTabState:(projectId)=>{
