@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { Allotment } from "allotment";
 import { FileExplorer } from "./fileExplorer";
+import { EditorView } from "@/features/editor/components/editor-view";
 
 
 
@@ -90,7 +91,7 @@ export const ProjectIdView = (
                     activeView === "editor" ? "visible" : "invisible"
                 )}>
                     <div>
-                        Editor
+                     <EditorView projectId={projectId}/>
                     </div>
                 </div>
                     </Allotment.Pane>

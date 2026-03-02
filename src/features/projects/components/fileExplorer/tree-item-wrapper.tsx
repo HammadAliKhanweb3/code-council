@@ -43,7 +43,7 @@ export const TreeItemWrapper = (
                     }
                   }}
                   className={
-                    cn("groub flex items-center gpa-1 w-full h-5.5 hover:bg-accent/30 bg-yellow-500 outline:none focus:ring-1 focux:ring-inset focus:ring-ring",
+                    cn("groub flex items-center gpa-1 w-full h-5.5 hover:bg-accent/30  outline:none focus:ring-1 focux:ring-inset focus:ring-ring",
                             isActive && "bg-accent/30"
                     )
                   }
