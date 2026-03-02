@@ -21,10 +21,14 @@ export const ProjectsIdViewLayout = ({children,projectId}:
            <div className="flex-1 flex overflow-hidden">
              <Allotment className="flex-1" 
             defaultSizes={[
+                DEFAULT_MIAN_SIZE,
                 DEFAULT_CONVERSATION_SIDEBAR_WIDTH,
-                DEFAULT_MIAN_SIZE
             ]}
             >
+            <Allotment.Pane >
+            {children}
+            </Allotment.Pane>
+
              <Allotment.Pane 
              snap 
              minSize={MIN_SIDEBAR_WIDTH} 
@@ -32,9 +36,9 @@ export const ProjectsIdViewLayout = ({children,projectId}:
              preferredSize={DEFAULT_CONVERSATION_SIDEBAR_WIDTH}>
                    <div>Conversation Sidebar</div>
              </Allotment.Pane>
-            <Allotment.Pane >
-            {children}
-            </Allotment.Pane>
+
+             
+
             </Allotment>
            </div>
         </div>
