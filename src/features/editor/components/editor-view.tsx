@@ -1,4 +1,5 @@
 import { Id } from "../../../../convex/_generated/dataModel"
+import { FileBreadcrumbs } from "./file-breadcrumbs"
 import { TopNavigation } from "./top-navigation"
 
 
@@ -13,6 +14,9 @@ export const EditorView= (
             <div className="flex items-center">
                <TopNavigation projectId={projectId}/>
             </div>
+            {projectId && 
+              <FileBreadcrumbs projectId={projectId}/>
+            }
         </div>
     )
 }

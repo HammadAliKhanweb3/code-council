@@ -29,7 +29,7 @@ export const Tree = ({
     const [isRenaming,setIsRenaming] = useState(false)
     const [creating,setCreating]=useState<"file" | "folder" | null>(null)
 
-    const {acitveTabId,openFile,openTabs,closeTab}= useEditor(projectId)   
+    const {activeTabId,openFile,openTabs,closeTab}= useEditor(projectId)   
     const renameFile = useRenameFile()
     const deleteFile = useDeleteFile()
     const createFile = useCreateFile()
@@ -77,7 +77,7 @@ export const Tree = ({
 
     if(item.type === "file"){
         const fileName = item.name
-        const isActive = acitveTabId === item._id
+        const isActive = activeTabId === item._id
 
         if(isRenaming){
          return(

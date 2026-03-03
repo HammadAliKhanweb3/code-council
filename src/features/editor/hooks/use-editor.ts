@@ -36,11 +36,9 @@ const setActiveTab = useCallback((
 },[store,projectId])
 
 
-
-
     return {
             openTabs: tabsState.openTabs,
-            acitveTabId: tabsState.activeTabId,
+            activeTabId: tabsState.activeTabId,
             previewTabId: tabsState.previewTabId,
             openFile,
             closeTab,
