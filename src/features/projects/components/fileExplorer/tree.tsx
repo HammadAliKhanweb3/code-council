@@ -42,6 +42,7 @@ export const Tree = ({
 })
 
     const handleCreate = (name:string)=>{
+         console.log("Tree handleCreate called", name, "parentId:", item._id, "item name:", item.name)
         setCreating(null)
         if(creating === "file"){
             createFile({
@@ -133,7 +134,7 @@ export const Tree = ({
         <>
         <button
         onClick={()=>setIsOpen((value)=>!value)}
-        className="group flex items-center gap-1 h-5.5 hover:bg-accent/30 bg-amber-800"
+        className="group flex items-center gap-1 h-5.5 hover:bg-accent/30 "
         style={{paddingLeft:getItemPadding(level,false)}}
        >
         {folderContent }
@@ -197,7 +198,8 @@ if(isRenaming){
         <>
          <TreeItemWrapper
          level={level}
-         onClick={()=>setIsOpen((value)=>!value)}
+         onClick={()=>{ 
+            setIsOpen((value)=>!value)}}
          onDoubleClick={()=>{}}
          onRename={()=>setIsRenaming(true)}
          item={item}
@@ -212,8 +214,8 @@ if(isRenaming){
          </TreeItemWrapper>  
          {
             isOpen && (
-                <>
-                {folderContent === undefined && <LoadingRow level={level+1}/>}
+                <>  
+                {folderContents === undefined && <LoadingRow level={level+1}/>}
                 {folderContents?.map((subItem)=>(
                          <Tree
                          key={subItem._id} 
