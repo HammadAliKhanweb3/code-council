@@ -34,7 +34,7 @@ export const TreeItemWrapper = (
         <ContextMenu>
             <ContextMenuTrigger asChild>            
                   <button
-                  onClick={onClick}
+                  onClick={onClick} 
                   onDoubleClick={onDoubleClick}
                   onKeyDown={(e)=>{
                     if(e.key === "Enter"){
@@ -59,10 +59,10 @@ export const TreeItemWrapper = (
                 {
                     item.type === "folder" && (
                         <>
-                        <ContextMenuItem onClick={onCreateFile}>
+                        <ContextMenuItem onClick={ onCreateFile}>
                              New File...
                         </ContextMenuItem>
-                        <ContextMenuItem onClick={onCreateFolder}>
+                        <ContextMenuItem onClick={ onCreateFolder}>
                              New Folder...
                         </ContextMenuItem>
                        <ContextMenuSeparator/>
