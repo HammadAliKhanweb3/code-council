@@ -90,9 +90,7 @@ export const ProjectIdView = (
                     "absolute inset-0",
                     activeView === "editor" ? "visible" : "invisible"
                 )}>
-                    <div>
                      <EditorView projectId={projectId}/>
-                    </div>
                 </div>
                     </Allotment.Pane>
                 </Allotment> 

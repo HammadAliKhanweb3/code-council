@@ -4,6 +4,7 @@ import { useEditor } from "../hooks/use-editor"
 import { FileBreadcrumbs } from "./file-breadcrumbs"
 import { TopNavigation } from "./top-navigation"
 import Image from "next/image"
+import { CodeEditor } from "./code-editor"
 
 
 
@@ -34,6 +35,13 @@ export const EditorView= (
                                 height={50}
                                 className="opacity-25"
                                 />
+                    </div>
+                )
+               }
+               {
+                activeFile && (
+                    <div className="size-full">
+                        <CodeEditor/>
                     </div>
                 )
                }
