@@ -41,7 +41,7 @@ export const EditorView= (
                {
                 activeFile && (
                     <div className="size-full">
-                        <CodeEditor/>
+                        <CodeEditor fileName={activeFile.name}/>
                     </div>
                 )
                }
