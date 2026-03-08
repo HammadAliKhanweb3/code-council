@@ -117,7 +117,7 @@ return(
             isOpen &&
             (
                 <>
-                {rootFiles === undefined && <LoadingRow level={0}/>}
+                {   rootFiles === undefined && <LoadingRow level={0}/>}
                 {
                     creating && (
                         <CreateInput
